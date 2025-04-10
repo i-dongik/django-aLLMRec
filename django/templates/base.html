@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %}My Site{% endblock %}</title>
+
+    <!-- 기본 스타일 -->
+    <link rel="stylesheet" href="{% static 'home/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/footer.css' %}">
+
+    {% block head_extra %}{% endblock %}
+    
+</head>
+
+<body>
+
+    {% include "navbar.html" %}
+
+    {% block main_area %}{% endblock %}
+
+    {% include "footer.html" %}
+
+    {% block body_extra %}{% endblock %}
+
+    <!-- ✅ 외부 static JS 파일 연결 -->
+    <!-- <script src="{% static 'js/nav.js' %}"></script> -->
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // 문서 클릭 시 드롭다운 닫기
+        window.onclick = function (event) {
+            if (!event.target.matches('#myDropdownButton')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };
+    </script>
+
+</body>
+
+</html>

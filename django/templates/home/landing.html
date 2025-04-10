@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}푸닭{% endblock %}
+
+{% block main_area %}
+<section>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6 text-dark">
+                <h1 class="mt-5">푸닭</h1>
+                <p>
+                    파이썬 진영의 가장 대표적인 웹프레임워크 중 하나인 Django를 이용하여
+                    여러분만의 블로그 사이트를 만들어보세요.
+                </p>
+            </div>
+
+            <div class="col-lg-5 mt-5">
+                {% for i in '012345679895255' %}
+                    <h2 class="text-dark">{{ i }}: Landing PAGE</h2>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
