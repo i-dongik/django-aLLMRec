@@ -1,2 +1,2 @@
-# django-BulletinBoard
-A simple bulletin board using django
+# django-aLLMRec
+A django project using LLM recommendation system
